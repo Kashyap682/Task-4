@@ -1,0 +1,60 @@
+body{
+    background-color: #141414;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    background-color: #222222;
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+div#block{
+    border: none;
+    border-radius: 20px;
+    background-color: #141414;
+    background-image: url(logo.png);
+    background-repeat: no-repeat;
+    background-position: 55% 15%;
+    width: 60%;
+    height: 65%;
+    position: relative;
+    top: 20%;
+    left: 20%;
+}
+form#form1{
+    position: relative;
+    top: 50%;
+}
+input[type=text], select {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 5px 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  input[type=password], select {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  button#login{
+    width: 80%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 20px 40px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  a#mail{
+    text-decoration: underline;
+    color: gray;
+    font-size: large;
+  }

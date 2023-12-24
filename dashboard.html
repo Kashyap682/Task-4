@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="styles2.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <h7>Company Matrics</h7>
+        <div class="container1">
+            <div>
+                <h7 class="green">$406,411.29</h7><br><br>
+                <h8>Total Revenue</h8>
+            </div>
+            <div>
+                <h7>$620</h7><br><br>
+                <h8>Total Jobs Avg</h8>
+            </div>
+            <div>
+                <h7>655</h7><br><br>
+                <h8>Tickets Created</h8>
+            </div>
+            <div>
+                <h7>735</h7><br><br>
+                <h8>Tickets Scheduled</h8>
+            </div>
+            <div>
+                <h7 class="red">110,448.8</h7><br><br>
+                <h8>Outstanding Amount</h8>
+            </div>
+            <div>
+                <h7>105</h7><br><br>
+                <h8>Membership Sold</h8>
+            </div>
+            <div>
+                <h7>436</h7><br><br>
+                <h8>Jobs Completed</h8>
+            </div>
+            <div>
+                <h7>65</h7><br><br>
+                <h8>Tickets Cancelled</h8>
+            </div>
+        </div>
+        <div class="container2">
+            <div><h7>Revenue by Job Location</h7></div>
+            <div><h7>Revenue by Job Type</h7></div>
+            <div class="div1"><canvas id="myChart1" style="width:500px;max-width:650px"></canvas></div>
+            <div class="div1"><canvas id="myChart2" style="width:500px;max-width:650px"></canvas></div>
+        </div>
+    </body>
+    <script>
+        const ctx = document.getElementById('myChart1').getContext('2d');
+        const ctx2 = document.getElementById('myChart2').getContext('2d');
+
+        const numCities = 6;
+        const cities = ["Everett", "Seatle", "Lynnwood", "Bothell", "Mukilteo", "Edmonds"];
+        const revenues = cities.map(() => Math.floor(Math.random() * 10000) + 5000);
+
+        const numTypes = 7;
+        const Types = ["Service Plumbing", "Bid Work HVAC", "Service HVAC", "Bid Work Plumbing", "HWT Replacement", "Maintenance", "Material Sale"];
+        const revenues2 = Types.map(() => Math.floor(Math.random() * 10000) + 5000);
+
+        const data1 = {
+        labels: cities,
+        datasets: [{
+            label: 'Revenue',
+            data: revenues,
+            backgroundColor: '#41bf99', // Set the desired color here
+            borderColor: '#41bf99',
+            barThickness:15,
+            borderWidth: 1
+        }]
+        };
+
+        const data2 = {
+        labels: Types,
+        datasets: [{
+            label: 'Revenue',
+            data: revenues2,
+            backgroundColor: '#41bf99', // Set the desired color here
+            borderColor: '#41bf99',
+            barThickness:15,
+            borderWidth: 1
+        }]
+        };
+
+        const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: data1,
+        options: {
+            indexAxis: 'y',
+            scales: {
+            y: {
+                beginAtZero: true,
+            }
+            }
+        }
+        });
+        const myChart2 = new Chart(ctx2, {
+        type: 'bar',
+        data: data2,
+        options: {
+            indexAxis: 'y',
+            scales: {
+            y: {
+                beginAtZero: true,
+            }
+            }
+        }
+        });
+    </script>
+</html>
